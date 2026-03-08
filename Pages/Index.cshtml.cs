@@ -14,18 +14,18 @@ public class IndexModel : PageModel
 {
     public List<ExerciseMenuItem> Exercises { get; } = new()
     {
-        new() { Number = 1,  Title = "Razor Page com PageModel e BindProperty",    Description = "Formul·rio de cadastro de cidade com model binding via [BindProperty].",              Page = "/CityManager/CreateCity" },
-        new() { Number = 2,  Title = "Model Binding via Handler Parameters",        Description = "Cadastro de cidade usando par‚metro direto no mÈtodo OnPost.",                       Page = "/CityManager/CreateCityParam" },
-        new() { Number = 3,  Title = "ValidaÁ„o Server-side com Data Annotations",  Description = "ValidaÁ„o do nome da cidade com [Required] e [MinLength(3)] no servidor.",           Page = "/CityManager/CreateCityValidation" },
-        new() { Number = 4,  Title = "ValidaÁ„o Client-side com Tag Helpers",       Description = "Mensagens de erro antes do envio usando asp-validation-for e scripts.",              Page = "/CityManager/CreateCityClientVal" },
-        new() { Number = 5,  Title = "Objeto Complexo ó Cadastro de PaÌs",          Description = "Formul·rio com objeto Country contendo CountryName e CountryCode.",                  Page = "/CountryManager/CreateCountry" },
-        new() { Number = 6,  Title = "ValidaÁ„o do CÛdigo ISO do PaÌs",             Description = "Valida que o cÛdigo do paÌs tenha exatamente 2 caracteres.",                         Page = "/CountryManager/CreateCountryValidated" },
-        new() { Number = 7,  Title = "M˙ltiplos Registros Simult‚neos",             Description = "Submiss„o de 5 paÌses em um ˙nico formul·rio usando List<InputModel>.",             Page = "/CountryManager/CreateMultipleCountries" },
-        new() { Number = 8, Title = "Roteamento com Par‚metros na URL", Description = "P·gina de detalhes da cidade com par‚metro via @page \"{cityName}\".", Page = "/CityManager/CityList" },
-        new() { Number = 9,  Title = "Links com Tag Helpers de Roteamento",         Description = "Lista de cidades com links din‚micos usando asp-route-cityName.",                   Page = "/CityManager/CityList" },
-        new() { Number = 10, Title = "ManipulaÁ„o de Arquivos ó Escrita",           Description = "Salva texto em arquivo .txt no wwwroot/files com link para download.",              Page = "/FileManager/SaveNote" },
-        new() { Number = 11, Title = "ManipulaÁ„o de Arquivos ó Leitura",           Description = "Lista e exibe o conte˙do dos arquivos .txt salvos.",                                Page = "/FileManager/ListNotes" },
-        new() { Number = 12, Title = "ValidaÁ„o Customizada com ModelState",        Description = "PaÌs e cÛdigo devem comeÁar com a mesma letra, validado via ModelState.",           Page = "/CountryManager/CreateCountryCustomVal" },
+        new() { Number = 1,  Title = "Razor Page com PageModel e BindProperty", Description = "Formul√°rio de cadastro de cidade com model binding via [BindProperty].", Page = "/CityManager/CreateCity" },
+        new() { Number = 2,  Title = "Model Binding via Handler Parameters", Description = "Cadastro de cidade usando par√¢metro direto no m√©todo OnPost.", Page = "/CityManager/CreateCityParam" },
+        new() { Number = 3,  Title = "Valida√ß√£o Server-side com Data Annotations", Description = "Valida√ß√£o do nome da cidade com [Required] e [MinLength(3)] no servidor.", Page = "/CityManager/CreateCityValidation" },
+        new() { Number = 4,  Title = "Valida√ß√£o Client-side com Tag Helpers", Description = "Mensagens de erro antes do envio usando asp-validation-for e scripts.", Page = "/CityManager/CreateCityClientVal" },
+        new() { Number = 5,  Title = "Objeto Complexo ‚Äî Cadastro de Pa√≠s", Description = "Formul√°rio com objeto Country contendo CountryName e CountryCode.", Page = "/CountryManager/CreateCountry" },
+        new() { Number = 6,  Title = "Valida√ß√£o do C√≥digo ISO do Pa√≠s", Description = "Valida que o c√≥digo do pa√≠s tenha exatamente 2 caracteres.", Page = "/CountryManager/CreateCountryValidated" },
+        new() { Number = 7,  Title = "M√∫ltiplos Registros Simult√¢neos", Description = "Submiss√£o de 5 pa√≠ses em um √∫nico formul√°rio usando List<InputModel>.", Page = "/CountryManager/CreateMultipleCountries" },
+        new() { Number = 8, Title = "Roteamento com Par√¢metros na URL", Description = "P√°gina de detalhes da cidade com par√¢metro via @page \"{cityName}\".", Page = "/CityManager/CityList" },
+        new() { Number = 9,  Title = "Links com Tag Helpers de Roteamento", Description = "Lista de cidades com links din√¢micos usando asp-route-cityName.", Page = "/CityManager/CityList" },
+        new() { Number = 10, Title = "Manipula√ß√£o de Arquivos ‚Äî Escrita", Description = "Salva texto em arquivo .txt no wwwroot/files com link para download.", Page = "/FileManager/SaveNote" },
+        new() { Number = 11, Title = "Manipula√ß√£o de Arquivos ‚Äî Leitura", Description = "Lista e exibe o conte√∫do dos arquivos .txt salvos.", Page = "/FileManager/ListNotes" },
+        new() { Number = 12, Title = "Valida√ß√£o Customizada com ModelState", Description = "Pa√≠s e c√≥digo devem come√ßar com a mesma letra, validado via ModelState.", Page = "/CountryManager/CreateCountryCustomVal" },
     };
 }
 
