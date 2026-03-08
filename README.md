@@ -1,6 +1,6 @@
 # DR4-TP2-2026  
 ### TP2 — Desenvolvimento Web com .NET e Bases de Dados
-Este projeto reúne exercícios práticos desenvolvidos em ASP.NET Core Razor Pages como parte do TP2.
+Este projeto reúne exercícios práticos desenvolvidos em ASP.NET Core Razor Pages do TP2.
 
 ---
 
