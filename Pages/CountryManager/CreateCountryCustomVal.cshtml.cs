@@ -13,14 +13,14 @@ namespace DR4_TP2.Pages.CountryManager
 
         public class InputModel
         {
-            [Required(ErrorMessage = "O nome do país é obrigatório.")]
+            [Required(ErrorMessage = "O nome do paÃ­s Ã© obrigatÃ³rio.")]
             [MinLength(2, ErrorMessage = "Nome muito curto.")]
-            [Display(Name = "Nome do País")]
+            [Display(Name = "Nome do PaÃ­s")]
             public string CountryName { get; set; } = string.Empty;
 
-            [Required(ErrorMessage = "O código ISO é obrigatório.")]
-            [StringLength(2, MinimumLength = 2, ErrorMessage = "O código deve ter exatamente 2 letras.")]
-            [Display(Name = "Código ISO (2 letras)")]
+            [Required(ErrorMessage = "O cÃ³digo ISO Ã© obrigatÃ³rio.")]
+            [StringLength(2, MinimumLength = 2, ErrorMessage = "O cÃ³digo deve ter exatamente 2 letras.")]
+            [Display(Name = "CÃ³digo ISO (2 letras)")]
             public string CountryCode { get; set; } = string.Empty;
         }
 
@@ -28,7 +28,7 @@ namespace DR4_TP2.Pages.CountryManager
 
         public void OnPost()
         {
-            // Validação customizada: primeira letra deve ser a mesma
+            // ValidaÃ§Ã£o: primeira letra deve ser a mesma
             if (!string.IsNullOrEmpty(Input.CountryName) && !string.IsNullOrEmpty(Input.CountryCode))
             {
                 var firstLetterName = char.ToUpper(Input.CountryName[0]);
@@ -37,7 +37,7 @@ namespace DR4_TP2.Pages.CountryManager
                 if (firstLetterName != firstLetterCode)
                 {
                     ModelState.AddModelError("Input.CountryCode",
-                        $"O código deve começar com '{firstLetterName}', igual ao nome do país.");
+                        $"O cÃ³digo deve comeÃ§ar com '{firstLetterName}', igual ao nome do paÃ­s.");
                 }
             }
 
