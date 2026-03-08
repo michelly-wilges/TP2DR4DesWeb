@@ -1,0 +1,71 @@
+﻿@page
+@model DR4_TP2.Pages.CityManager.CreateCityValidationModel
+@{
+    ViewData["Title"] = "Exercício 3";
+}
+
+<h1>Exercício 3 — Validação Server-side</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <div class="campo">
+        <label asp-for="Input.CityName">Nome da Cidade:</label>
+        <input asp-for="Input.CityName" />
+        <span asp-validation-for="Input.CityName" class="erro"></span>
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+@if (Model.IsSubmitted && ModelState.IsValid)
+{
+    <p><strong>Cidade válida cadastrada:</strong> @Model.Input.CityName</p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        max-width: 400px;
+        margin: 20px 0;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+
+    .erro {
+        color: red;
+        font-size: 13px;
+        display: block;
+        margin-top: 4px;
+    }
+</style>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

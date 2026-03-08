@@ -1,0 +1,96 @@
+﻿@page
+@model DR4_TP2.Pages.CountryManager.CreateMultipleCountriesModel
+@{
+    ViewData["Title"] = "Exercício 7";
+}
+
+<h1>Exercício 7 — Múltiplos Países</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome do País</th>
+                <th>Código ISO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < 5; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>
+                        <input type="text"
+                               name="Countries[@i].CountryName"
+                               value="@(Model.Countries.Count > i ? Model.Countries[i].CountryName : "")"
+                               placeholder="Nome do país" />
+                    </td>
+                    <td>
+                        <input type="text"
+                               name="Countries[@i].CountryCode"
+                               value="@(Model.Countries.Count > i ? Model.Countries[i].CountryCode : "")"
+                               placeholder="Ex: BR"
+                               maxlength="2" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit">Submeter</button>
+</form>
+
+@if (Model.SubmittedCountries.Any())
+{
+    <h2>Países recebidos:</h2>
+    <ul>
+        @foreach (var c in Model.SubmittedCountries)
+        {
+            <li>@c.CountryName — @c.CountryCode</li>
+        }
+    </ul>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        margin: 20px 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-bottom: 15px;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 6px 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #f5f5f5;
+    }
+
+    input {
+        padding: 4px 6px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+</style>

@@ -1,0 +1,28 @@
+﻿@page "{cityName}"
+@model DR4_TP2.Pages.CityManager.CityDetailsModel
+@{
+    ViewData["Title"] = "Exercício 8";
+}
+
+<h1>Exercício 8 — Detalhes da Cidade</h1>
+<p><a href="/CityManager/CityList">← Voltar à Lista</a></p>
+
+<p>Você está vendo detalhes de: <strong>@Model.CityName</strong></p>
+<p>URL atual: <code>/CityManager/CityDetails/@Model.CityName</code></p>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 2px 6px;
+        border: 1px solid #ccc;
+    }
+</style>

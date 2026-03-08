@@ -1,0 +1,59 @@
+﻿@page
+@model DR4_TP2.Pages.CityManager.CreateCityParamModel
+@{
+    ViewData["Title"] = "Exercício 2";
+}
+
+<h1>Exercício 2 — Parâmetro no Handler</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <div class="campo">
+        <label for="cityName">Nome da Cidade:</label>
+        <input type="text" id="cityName" name="cityName" value="@Model.SubmittedCity" />
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SubmittedCity))
+{
+    <p><strong>Cidade recebida via parâmetro:</strong> @Model.SubmittedCity</p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        max-width: 400px;
+        margin: 20px 0;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+</style>

@@ -1,0 +1,85 @@
+﻿@page
+@model DR4_TP2.Pages.FileManager.SaveNoteModel
+@{
+    ViewData["Title"] = "Exercício 10";
+}
+
+<h1>Exercício 10 — Salvar Nota</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <div class="campo">
+        <label asp-for="Input.Title">Título:</label>
+        <input asp-for="Input.Title" />
+        <span asp-validation-for="Input.Title" class="erro"></span>
+    </div>
+    <div class="campo">
+        <label asp-for="Input.Content">Conteúdo:</label>
+        <textarea asp-for="Input.Content" rows="6"></textarea>
+        <span asp-validation-for="Input.Content" class="erro"></span>
+    </div>
+    <button type="submit">Salvar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SavedFileName))
+{
+    <p><strong>Nota salva:</strong> @Model.SavedFileName</p>
+    <p>
+        <a href="/files/@Model.SavedFileName" target="_blank">Baixar arquivo</a> |
+        <a asp-page="/FileManager/ListNotes">Ver todas as notas</a>
+    </p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        max-width: 400px;
+        margin: 20px 0;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+
+    .erro {
+        color: red;
+        font-size: 13px;
+        display: block;
+        margin-top: 4px;
+    }
+
+    a {
+        color: #0077cc;
+    }
+</style>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

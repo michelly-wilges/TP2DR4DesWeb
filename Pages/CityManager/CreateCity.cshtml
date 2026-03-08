@@ -1,0 +1,59 @@
+﻿@page
+@model DR4_TP2.Pages.CityManager.CreateCityModel
+@{
+    ViewData["Title"] = "Exercício 1";
+}
+
+<h1>Exercício 1 — Cadastro de Cidade</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <div class="campo">
+        <label for="CityName">Nome da Cidade:</label>
+        <input type="text" id="CityName" name="CityName" value="@Model.CityName" />
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.CityName))
+{
+    <p><strong>Cidade submetida:</strong> @Model.CityName</p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        max-width: 400px;
+        margin: 20px 0;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+</style>

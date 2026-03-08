@@ -1,0 +1,78 @@
+﻿@page
+@model DR4_TP2.Pages.CountryManager.CreateCountryModel
+@{
+    ViewData["Title"] = "Exercício 5";
+}
+
+<h1>Exercício 5 — Cadastro de País</h1>
+<p><a href="/">← Voltar ao Menu</a></p>
+
+<form method="post" class="formulario">
+    <div class="campo">
+        <label asp-for="Input.CountryName">Nome do País:</label>
+        <input asp-for="Input.CountryName" />
+        <span asp-validation-for="Input.CountryName" class="erro"></span>
+    </div>
+    <div class="campo">
+        <label asp-for="Input.CountryCode">Código ISO (2 letras):</label>
+        <input asp-for="Input.CountryCode" maxlength="2" />
+        <span asp-validation-for="Input.CountryCode" class="erro"></span>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
+
+@if (Model.CreatedCountry != null)
+{
+    <h2>País criado:</h2>
+    <p><strong>Nome:</strong> @Model.CreatedCountry.CountryName</p>
+    <p><strong>Código:</strong> @Model.CreatedCountry.CountryCode</p>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        max-width: 400px;
+        margin: 20px 0;
+    }
+
+    .campo {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+    }
+
+    .erro {
+        color: red;
+        font-size: 13px;
+        display: block;
+        margin-top: 4px;
+    }
+</style>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
